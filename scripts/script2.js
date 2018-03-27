@@ -3,5 +3,7 @@ const myLibrary = require("./scripts1.js")  //this is an absolute path. Node doe
 //this code calls out the functions to be run from the script1 file
 console.log(myLibrary.sum2(10,20));
 console.log(myLibrary.getDate());
-console.log(myLibrary.printName("hello"));
+console.log(myLibrary.printName());
 console.log(myLibrary.changeStringToNum());
+console.log(myLibrary.findMean());
+console.log(myLibrary.findMedian());
