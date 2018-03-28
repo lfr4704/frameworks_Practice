@@ -20,30 +20,32 @@ function changeStringToNum () {
     return num3;
 }
 
-var numbersArray = [10,10,20,30,40,50,60];
-let sumOfNum = 0;
 
-
-function findMean() {
-    for (let i = 0; i < numbersArray.length; i++) {
-        sumOfNum = sumOfNum + numbersArray[i];
+function findMean(numbers) {
+    let sumOfNum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sumOfNum = sumOfNum + numbers[i];
     }
-    let mean = sumOfNum/numbersArray.length;
+    let mean = sumOfNum/numbers.length;
     return mean;
 }
 
-function findMedian() {
-    numbersArray.sort();
-    console.log(numbersArray);// check
-    if (numbersArray.length%2 == 0){ //if number is even
-        let middle = numbersArray.length/2;
-        console.log(middle);//check
-        let median = Math.round((numbersArray[middle-1] + numbersArray[middle])/2);
+function sortNumbers(a,b){
+      return a-b;
+}
+
+function findMedian(numbers) {
+    numbers.sort(sortNumbers);
+    //console.log(numbers);
+    if (numbers.length%2 == 0){ //if number is even
+        let middle = numbers.length/2;
+        //console.log(middle);
+        let median = Math.round((numbers[middle-1] + numbers[middle])/2);
         return median;
     } else { //if number is odd
-        let middle = Math.round(numbersArray.length/2);
-        let median = numbersArray[middle-1];
-        console.log(middle);//check
+        let middle = Math.round(numbers.length/2);
+        let median = numbers[middle-1];
+       // console.log(middle);
         return median;
     }
      
@@ -60,5 +62,6 @@ module.exports = {
     printName: printName,
     changeStringToNum: changeStringToNum,
     findMean,
-    findMedian
+    findMedian,
+    sortNumbers
 }
