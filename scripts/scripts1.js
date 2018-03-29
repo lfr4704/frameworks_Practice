@@ -51,12 +51,36 @@ function findMedian(numbers) {
      
 }
 
-function findMode() {
+//random lottery ticket generator
+
+
+function randomLotteryGenerator() {
+    var ticket = [];
     
+    for (var i = 0; i < 6; i++) {
+        
+        var randomNumber = Math.floor(Math.random() * 56) + 1;
+        
+        var runLoop = true;
+        
+        while(runLoop) {
+            if (ticket.includes(randomNumber)) {
+                randomNumber = Math.floor(Math.random() * 56) + 1;
+            } else {
+                ticket.push(randomNumber);
+                runLoop = false;
+            }
+        }
+    }
+    
+    ticket.sort(sortNumbers);
+    return ticket;
 }
+
 
 //this code tell what functions are allowed to run in this file.
 module.exports = { 
+    tickets: randomLotteryGenerator,
     getDate, //you dont have to assign a name
     sum2: getSumProduct, // to the left of ":" can be called differently or the same
     printName: printName,
@@ -65,3 +89,4 @@ module.exports = {
     findMedian,
     sortNumbers
 }
+
