@@ -80,7 +80,7 @@ function randomLotteryGenerator() {
 
 //this code tell what functions are allowed to run in this file.
 module.exports = { 
-    tickets: randomLotteryGenerator,
+    ticket: randomLotteryGenerator,
     getDate, //you dont have to assign a name
     sum2: getSumProduct, // to the left of ":" can be called differently or the same
     printName: printName,
